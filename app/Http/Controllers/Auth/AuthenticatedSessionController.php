@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/index');
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
@@ -43,6 +43,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/index');
+        return redirect(RouteServiceProvider::HOME);
     }
 }
